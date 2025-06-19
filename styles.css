@@ -1,0 +1,67 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.banner-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.banner-content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 991.98px) {
+  .banner-content {
+    max-width: 100%;
+  }
+}
+.no-break {
+  white-space: nowrap;
+}
+
+.floating-contact {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  z-index: 9999;
+  background: #00b900;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+  padding: 8px;
+  transition: box-shadow 0.16s, transform 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.floating-contact:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transform: scale(1.08);
+  background: #10d450;
+}
+.floating-contact img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+@media (max-width: 600px) {
+  .floating-contact {
+    right: 12px;
+    bottom: 12px;
+    padding: 4px;
+  }
+  .floating-contact img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+

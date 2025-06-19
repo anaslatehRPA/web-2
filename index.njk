@@ -1,0 +1,121 @@
+---
+layout: layout.njk
+title: ร้านวัสดุก่อสร้าง SoTrad
+description: ร้านวัสดุก่อสร้าง SoTrad จำหน่ายวัสดุก่อสร้างครบวงจร สั่งง่าย ส่งไว ราคาพิเศษ พร้อมโปรโมชั่นมากมาย
+
+banner: |
+  <section class="banner-full bg-primary bg-gradient text-white py-5 mb-5 text-center" style="background:linear-gradient(90deg,#2563eb 60%,#1e40af 100%);">
+    <div class="banner-content px-4">
+      <h1 class="fw-semibold mb-5" style="font-size: 2.2rem;">
+        SoTrad ผู้ผลิตและจำหน่าย
+      </h1>
+      <p class="lead  mb-4 ">ครบเครื่องเรื่องวัสดุก่อสร้าง คุณภาพดี ราคายุติธรรม ส่งไวทั่วภาคใต้</p>
+    </div>
+  </section>
+banner_css: |
+  .banner-full {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: hidden;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  .banner-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .auto-shrink {
+    font-size: 3rem;
+    /* ปรับขนาดอักษรเมื่อจอเล็กลง */
+    word-break: break-word;
+  }
+  @media (max-width: 991.98px) {
+    .banner-content {
+      max-width: 100%;
+    }
+    .auto-shrink {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .auto-shrink {
+      font-size: 1.4rem;
+    }
+  }
+---
+
+<!-- โปรโมชั่น -->
+<section class="container mb-5">
+  <h2 class="text-center fw-bold mb-4 text-primary">โปรโมชั่นพิเศษ</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="alert alert-info fs-5 shadow-sm py-4 text-center" role="alert">
+        <strong>🎉 โปรเดือนนี้:</strong> สั่งซื้อครบ 5,000 บาท ส่งฟรีในเขตเมืองยะลา!<br>
+        <span class="text-muted small">*สอบถามรายละเอียดเพิ่มเติมได้ทาง Line หรือ Facebook</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--สินค้าแนะนำ-->
+
+<section class="container mb-5">
+  <h2 class="text-center fw-bold mb-4 text-primary">สินค้าแนะนำ</h2>
+  <div class="row">
+    {% set count = 0 %}
+    {% for product in collections.products %}
+      {% if product.data.bestseller and count < 3 %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="{{ product.data.image }}" class="card-img-top" alt="{{ product.data.title }}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold text-primary">{{ product.data.title }}</h5>
+              <p class="card-text">{{ product.data.description }}</p>
+              <a href="{{ product.url }}" class="btn btn-outline-primary mt-auto">ดูรายละเอียด</a>
+            </div>
+          </div>
+        </div>
+        {% set count = count + 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+    <div style="text-align: center; margin-top: 2em;">
+      <a href="/products/" class="btn btn-primary" style="padding: 0.75em 2em; font-size: 1.1em;">
+        ดูสินค้าทั้งหมด
+      </a>
+    </div>
+</section>
+
+
+<!-- โปรโมชั่น 
+<section class="container mb-5">
+  <h2 class="text-center fw-bold mb-4 text-primary">โปรโมชั่นพิเศษ</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="alert alert-info fs-5 shadow-sm py-4 text-center" role="alert">
+        <strong>🎉 โปรเดือนนี้:</strong> สั่งซื้อครบ 5,000 บาท ส่งฟรีในเขตเมืองยะลา!<br>
+        <span class="text-muted small">*สอบถามรายละเอียดเพิ่มเติมได้ทาง Line หรือ Facebook</span>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+<!-- ข้อความแนะนำร้าน -->
+<!-- ข้อความแนะนำร้าน -->
+<section id="about" class="bg-light py-5 mb-5">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary mb-3">เกี่ยวกับ SoTrad</h2>
+    <p class="fs-5 mb-1">
+      SoTrad คือผู้นำด้านวัสดุก่อสร้างและเครื่องมือการเกษตรในภาคใต้  
+      เราคัดสรรสินค้าคุณภาพสูง ครอบคลุมทั้งงานโครงสร้าง งานไฟฟ้า งานประปา และงานตกแต่งบ้าน  
+      พร้อมทีมงานมืออาชีพที่พร้อมให้คำปรึกษาทุกขั้นตอน ด้วยบริการที่จริงใจ รวดเร็ว และราคายุติธรรม  
+      เพื่อให้ทุกโครงการของคุณสำเร็จอย่างมีประสิทธิภาพและมั่นใจ
+    </p>
+  </div>
+</section>
+
